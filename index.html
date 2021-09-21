@@ -19,7 +19,7 @@
         <div class="container" id="root">  
             <div class="sidebar">
                 <!-- sidebar__user -->
-                <div class="sidebar__user">
+                <div class="sidebar__user top-bar">
                     <!-- user__profile -->
                     <div class="user__profile align--center">
                         <div class="profile__img circle--container">
@@ -45,35 +45,95 @@
                 <!-- /sidebar__user -->
                 <!-- sidebar__desk-alert -->
                 <div class="sidebar__desk-alert align--center">
-                    <div class="circle--container icon-bell">
+                    <div class="circle--container icon-bell icon--large">
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="desk-alert__text">
                         <h6>Ricevi notifiche di nuovi messaggi</h6>
-                        <a href="#">Attiva notifiche desktop</a>
+                        <a class="text--sm" href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
                 <!-- /sidebar__desk-alert -->
-                <!-- sidebar__contacts -->
-                <div class="sidebar__contacts">
-                    <div class="contacts__search-bar">
-                        <button class="search-bar__icon btn">
+                <!-- sidebar__search-bar -->
+                <div class="sidebar__search-bar">
+                    <div class="search-bar__bar">
+                        <button class="bar__icon btn">
                             <i class="fas fa-search"></i> 
                         </button>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                    <ul class="contacts__list">
-                        <li class="list-item">
-                            <div class="circle--container">
-                                <img src="img/avatar_io.jpg" alt="user-profile_img">
-                            </div>
-                            <span class="contact-name">Name</span>
-                        </li>
-                    </ul>
                 </div>
+                <!-- /sidebar__search-bar -->
+                <!-- sidebar__contacts -->
+                <ul class="sidebar__contacts">
+                    <li class="list-item">
+                        <div class="circle--container">
+                            <img src="img/avatar_io.jpg" alt="user-profile_img">
+                        </div>
+                        <span class="contact-name">Name</span>
+                    </li>
+                </ul>
+                
                 <!-- /sidebar__contacts -->
             </div>    
-            <main></main>
+            <main class="chat">
+                <!-- chat__top-bar -->
+                <div class="chat__top-bar top-bar">
+                    <div class="top-bar__contact align--center">
+                        <div class="circle--container">
+                            <img src="img/avatar_io.jpg" alt="user-profile_img">
+    
+                        </div>
+                        <div class="desk-alert__text">
+                            <h6>Nome</h6>
+                            <span class="text--sm">Ultimo accesso oggi alle</span>
+                        </div>
+                    </div>
+                    <div class="top-bar__btn align--center">
+                        <button class="btn">
+                            <i class="fas fa-search"></i> 
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /chat__top-bar -->
+                <!-- chat__chat-window -->
+                <div class="chat__chat-window">
+                    <div class="message sent">
+                        <div class="message__text">
+                            Hai portato a spasso il cane?
+                        </div>
+                        <div class="message__date">
+                            10/01/2020 15:50:00
+                        </div>
+                    </div>
+                    <div class="message received">
+                        <div class="message__text">
+                            Hai portato a spasso il cane?
+                        </div>
+                        <div class="message__date">
+                            10/01/2020 15:50:00
+                        </div>
+                    </div>
+                </div>
+                <!-- /chat__chat-window -->
+                <!-- chat__bottom-bar -->
+                <div class="chat__bottom-bar align--center">
+                    <button class="btn icon--large">
+                        <i class="far fa-smile"></i>
+                    </button>
+                    <input class="bottom-bar__type-input" type="text" placeholder="Scrivi un messaggio">
+                    <button class="btn icon--large">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+                <!-- /chat__bottom-bar -->
+            </main>
         </div>
         <!-- vue -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

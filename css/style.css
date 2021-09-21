@@ -13,19 +13,20 @@ h6 {
     font-size: .9rem;
     font-weight: 500;
 }
+
+.text--sm {
+    font-size: .7rem;
+    color: var(--grey-100);
+}
 /* button */
 button {
     background-color: transparent;
     border: none;
     font-size: 1.2rem;
-    padding: 8px;
+    padding: 0 8px;
     cursor: pointer;
 }
 
-a {
-    font-size: .7rem;
-    color: var(--grey-100);
-}
 /* common */
 :root {
     --grey-100: #6b7376;
@@ -54,12 +55,24 @@ body {
     height: 100%;
     width: 85%;
     margin: auto;
+    background-color: #fff;
 }
 
 ul {
     list-style: none;
 }
 
+input {
+    border: none;
+    font-size: .8rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey-700);
+    padding: 8px;
+}
 
 .circle--container {
     width: 50px;
@@ -81,19 +94,20 @@ ul {
     display: flex;
     align-items: center;
 }
+
+.icon--large {
+    font-size: 1.2rem;
+    text-align: center;
+}
 /* sidebar */
 .sidebar {
-    background-color: #fff;
-    height: 100%;
+    height: calc(100vh - 40px);
+    border-right: 1px solid #d6d6d6;
+    display: flex;
+    flex-direction: column;
 }
 .sidebar .btn {
     color: var(--grey-200);
-}
-.sidebar__user {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--grey-700);
-    padding: 8px;
 }
 
 .sidebar__desk-alert {
@@ -101,37 +115,38 @@ ul {
     padding: 8px 20px;
 }
 
+.sidebar__contacts {
+    flex-grow: 1;
+}
 .icon-bell {
     background-color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 50px;
     color: var(--blue-700);
+    line-height: 50px;
 }
 
-.contacts__search-bar {
-    display: grid;
-    grid-template-columns: 70px auto;
+.sidebar__search-bar {
     background-color: var(--grey-800);
     padding: 8px;
 }
 
-.contacts__search-bar button, 
-.contacts__search-bar input {
+.search-bar__bar {
+    display: grid;
+    grid-template-columns: 70px auto;
+    border-radius: 5px;
     background-color: #fff;
     border: 1px solid var(--grey-700);
 }
-
-.contacts__search-bar input {
-    border-left: 0;
+.search-bar__bar input {
+    border: none;
+    border-left: 1px solid var(--grey-700);
     padding: 8px;
 }
 
-.contacts__list {
+.sidebar__contacts {
     overflow-y: auto;
 }
 
-.contacts__list li {
+.sidebar__contacts li {
     display: flex;
     padding: 8px 20px;
     border-bottom: 1px solid var(--grey-700);
@@ -143,6 +158,58 @@ ul {
 }
 /* main */
 main {
-    background-color: yellow;
-    height: 100%;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+main button {
+    color: var(--grey-200);
+}
+
+.chat__chat-window {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 50px 100px 0 100px;
+    background-image: url(../img/mine.jpg);
+}
+
+.message {
+    max-width: 40%;
+    padding: .8rem .3rem .3rem .8rem;
+    margin: .3rem;
+    border-radius: 10px;
+    font-size: .8rem;
+    word-wrap: break-word;
+}
+.sent {
+    align-self: flex-end;
+    background-color: var(--green-600);
+}
+.message__text {
+    margin-right: .8rem;
+}
+.received {
+    align-self: flex-start;
+    background-color: #fff;
+}
+.message__date {
+    text-align: right;
+    font-size: .65rem;
+    color: var(--grey-200);
+    margin-top: .3rem;
+}
+.chat__bottom-bar {
+    display: grid;
+    grid-template-columns: 70px auto 70px;
+    background-color: var(--white);
+    padding: 8px
+}
+
+.bottom-bar__type-input {
+    border-radius: 5px;
+    height: 40px;
+    padding: 8px;
 }
