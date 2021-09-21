@@ -17,7 +17,62 @@
     </head>
     <body>
         <div class="container" id="root">  
-            <div class="sidebar"></div>    
+            <div class="sidebar">
+                <!-- sidebar__user -->
+                <div class="sidebar__user">
+                    <!-- user__profile -->
+                    <div class="user__profile align--center">
+                        <div class="profile__img circle--container">
+                            <img src="img/avatar_io.jpg" alt="user-profile_img">
+                        </div>
+                        <span class="profile__name">Nome Utente</span>
+                    </div>
+                    <!-- /user__profile -->
+                    <!-- user__btn -->
+                    <div class="user__btn align--center">
+                        <button class="btn">
+                            <i class="fas fa-circle-notch"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-comment-alt"></i>
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                    <!-- /user__btn -->
+                </div>
+                <!-- /sidebar__user -->
+                <!-- sidebar__desk-alert -->
+                <div class="sidebar__desk-alert align--center">
+                    <div class="circle--container icon-bell">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="desk-alert__text">
+                        <h6>Ricevi notifiche di nuovi messaggi</h6>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- /sidebar__desk-alert -->
+                <!-- sidebar__contacts -->
+                <div class="sidebar__contacts">
+                    <div class="contacts__search-bar">
+                        <button class="search-bar__icon btn">
+                            <i class="fas fa-search"></i> 
+                        </button>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <ul class="contacts__list">
+                        <li class="list-item">
+                            <div class="circle--container">
+                                <img src="img/avatar_io.jpg" alt="user-profile_img">
+                            </div>
+                            <span class="contact-name">Name</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /sidebar__contacts -->
+            </div>    
             <main></main>
         </div>
         <!-- vue -->

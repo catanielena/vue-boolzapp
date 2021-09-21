@@ -7,19 +7,142 @@
 /* typo */
 body, button, input {
     font-family: 'Lato', sans-serif;
+    font-size: .9rem;
+}
+h6 {
+    font-size: .9rem;
+    font-weight: 500;
 }
 /* button */
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    padding: 8px;
+    cursor: pointer;
+}
+
+a {
+    font-size: .7rem;
+    color: var(--grey-100);
+}
 /* common */
 :root {
     --grey-100: #6b7376;
     --grey-200: #b1b1b1;
     --grey-300: #dbdbd2;
+    --grey-400: #d7dbd6;
     --grey-500: #e9ebeb;
     --grey-700: #eaeaea;
+    --grey-800: #fafafa;
     --green-100: #009688;
     --green-600: #d5f9ba;
     --white: #f3eeea;
     --blue-700: #8edafc;
 }
+
+body {
+    height: 100vh;
+    background: var(--grey-400);
+    background: linear-gradient(180deg, var(--green-100) 17%, var(--grey-400) 17%);
+    padding: 20px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 40% auto;
+    height: 100%;
+    width: 85%;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.circle--container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.circle--container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.align--center {
+    display: flex;
+    align-items: center;
+}
 /* sidebar */
+.sidebar {
+    background-color: #fff;
+    height: 100%;
+}
+.sidebar .btn {
+    color: var(--grey-200);
+}
+.sidebar__user {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey-700);
+    padding: 8px;
+}
+
+.sidebar__desk-alert {
+    background-color: var(--blue-700);
+    padding: 8px 20px;
+}
+
+.icon-bell {
+    background-color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 50px;
+    color: var(--blue-700);
+}
+
+.contacts__search-bar {
+    display: grid;
+    grid-template-columns: 70px auto;
+    background-color: var(--grey-800);
+    padding: 8px;
+}
+
+.contacts__search-bar button, 
+.contacts__search-bar input {
+    background-color: #fff;
+    border: 1px solid var(--grey-700);
+}
+
+.contacts__search-bar input {
+    border-left: 0;
+    padding: 8px;
+}
+
+.contacts__list {
+    overflow-y: auto;
+}
+
+.contacts__list li {
+    display: flex;
+    padding: 8px 20px;
+    border-bottom: 1px solid var(--grey-700);
+    cursor: pointer;
+}
+
+.contacts__list li:hover {
+    background-color: var(--grey-500);
+}
 /* main */
+main {
+    background-color: yellow;
+    height: 100%;
+}
