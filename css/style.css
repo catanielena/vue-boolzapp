@@ -4,11 +4,13 @@
     margin: 0;
     padding: 0;
 }
+
 /* typo */
 body, button, input {
     font-family: 'Lato', sans-serif;
     font-size: .9rem;
 }
+
 h6 {
     font-size: .9rem;
     font-weight: 500;
@@ -17,6 +19,7 @@ h6 {
 .text--sm {
     font-size: .7rem;
     color: var(--grey-100);
+    margin-top: .2rem;
 }
 /* button */
 button {
@@ -62,6 +65,14 @@ ul {
     list-style: none;
 }
 
+a {
+    cursor: pointer;
+}
+
+.text-decoration--none {
+    text-decoration: none;
+}
+
 input {
     border: none;
     font-size: .8rem;
@@ -82,6 +93,7 @@ input {
     margin-right: 15px;
     background-color: #fff;
     flex-shrink: 0;
+    padding: 0;
 }
 
 .circle--container img {
@@ -99,6 +111,7 @@ input {
     font-size: 1.2rem;
     text-align: center;
 }
+
 /* sidebar */
 .sidebar {
     height: calc(100vh - 40px);
@@ -106,6 +119,7 @@ input {
     display: flex;
     flex-direction: column;
 }
+
 .sidebar .btn {
     color: var(--grey-200);
 }
@@ -118,6 +132,7 @@ input {
 .sidebar__contacts {
     flex-grow: 1;
 }
+
 .icon-bell {
     background-color: #fff;
     color: var(--blue-700);
@@ -136,6 +151,7 @@ input {
     background-color: #fff;
     border: 1px solid var(--grey-700);
 }
+
 .search-bar__bar input {
     border: none;
     border-left: 1px solid var(--grey-700);
@@ -153,9 +169,10 @@ input {
     cursor: pointer;
 }
 
-.contacts__list li:hover {
+.sidebar__contacts li:hover {
     background-color: var(--grey-500);
 }
+
 /* main */
 main {
     height: calc(100vh - 40px);
@@ -176,6 +193,11 @@ main button {
     background-image: url(../img/mine.jpg);
 }
 
+.desk-alert__text {
+    display: flex;
+    flex-direction: column;
+}
+
 .message {
     max-width: 40%;
     padding: .8rem .3rem .3rem .8rem;
@@ -184,23 +206,28 @@ main button {
     font-size: .8rem;
     word-wrap: break-word;
 }
+
 .sent {
     align-self: flex-end;
     background-color: var(--green-600);
 }
+
 .message__text {
     margin-right: .8rem;
 }
+
 .received {
     align-self: flex-start;
     background-color: #fff;
 }
+
 .message__date {
     text-align: right;
     font-size: .65rem;
     color: var(--grey-200);
     margin-top: .3rem;
 }
+
 .chat__bottom-bar {
     display: grid;
     grid-template-columns: 70px auto 70px;
