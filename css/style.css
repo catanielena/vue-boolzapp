@@ -1,0 +1,25 @@
+/* reset  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* typo */
+body, button, input {
+    font-family: 'Lato', sans-serif;
+}
+/* button */
+/* common */
+:root {
+    --grey-100: #6b7376;
+    --grey-200: #b1b1b1;
+    --grey-300: #dbdbd2;
+    --grey-500: #e9ebeb;
+    --grey-700: #eaeaea;
+    --green-100: #009688;
+    --green-600: #d5f9ba;
+    --white: #f3eeea;
+    --blue-700: #8edafc;
+}
+/* sidebar */
+/* main */
