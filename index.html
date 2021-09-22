@@ -66,7 +66,11 @@
                 <!-- /sidebar__search-bar -->
                 <!-- sidebar__contacts -->
                 <ul class="sidebar__contacts">
-                    <li v-for="(contact, i) in contacts" :key="i">
+                    <li class="contacts__item"
+                    v-for="(contact, i) in contacts" 
+                    :class="{active: contact.visible}" 
+                    @click="changeActiveChat(i)"
+                    :key="i">
                         <button class="circle--container">
                             <img v-bind:src="'img/avatar'+ contact.avatar + '.jpg'" :alt="contact.name">
                         </button>
@@ -80,10 +84,10 @@
                 <div class="chat__top-bar top-bar">
                     <div class="top-bar__contact align--center">
                         <button class="circle--container">
-                            <img src="img/avatar_io.jpg" alt="user-profile_img">
+                            <img v-bind:src="'img/avatar'+ activeChat[0].avatar + '.jpg'" alt="">
                         </button>
                         <div class="desk-alert__text">
-                            <a href="#" class="text-decoration--none">Nome</a>
+                            <a href="#" class="text-decoration--none">{{activeChat[0].name}}</a>
                             <span class="text--sm">Ultimo accesso oggi alle</span>
                         </div>
                     </div>
@@ -102,20 +106,12 @@
                 <!-- /chat__top-bar -->
                 <!-- chat__chat-window -->
                 <div class="chat__chat-window">
-                    <div class="message sent">
+                    <div class="message" :class="message.status" v-for="message in activeChat[0].messages">
                         <div class="message__text">
-                            Hai portato a spasso il cane?
+                            {{message.message}}
                         </div>
                         <div class="message__date">
-                            10/01/2020 15:50:00
-                        </div>
-                    </div>
-                    <div class="message received">
-                        <div class="message__text">
-                            Hai portato a spasso il cane?
-                        </div>
-                        <div class="message__date">
-                            10/01/2020 15:50:00
+                            {{message.date}}
                         </div>
                     </div>
                 </div>
