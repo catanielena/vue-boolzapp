@@ -84,7 +84,8 @@ const app = new Vue ({
             },
         ],
         activeChat :[],
-        typedMsg: ""
+        typedMsg: "",
+        searchInput:"",
     },
     methods: {
         changeActiveChat: function(i) {
@@ -127,19 +128,11 @@ const app = new Vue ({
                 this.activeChat[0].messages.push(msgCpu);
             }, 1000);
         },
-        getValue: function(value) {
-            return value
+        searchIn : function() {
+            return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput))
         }
     },
     created: function() {
         this.activeChat.push(this.contacts[0])
-    },
-    // mounted: {
-    //     calcHeight: function(value) {
-    //         let numberOfLineBreaks = (value.match(/\n/g) || []).length;
-    //         // min-height + lines x line-height + padding + border
-    //         let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
-    //         return newHeight;
-    //     }
-    // }
+    }
 });

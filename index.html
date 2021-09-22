@@ -57,17 +57,17 @@
                 <!-- sidebar__search-bar -->
                 <div class="sidebar__search-bar">
                     <div class="search-bar__bar">
-                        <button class="bar__icon btn">
+                        <button class="bar__icon btn" @click="searchIn()">
                             <i class="fas fa-search"></i> 
                         </button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keyup.enter="searchIn()">
                     </div>
                 </div>
                 <!-- /sidebar__search-bar -->
                 <!-- sidebar__contacts -->
                 <ul class="sidebar__contacts">
                     <li class="contacts__item"
-                    v-for="(contact, i) in contacts" 
+                    v-for="(contact, i) in searchIn()" 
                     :class="{active: contact.visible}" 
                     @click="changeActiveChat(i)"
                     :key="i">
@@ -121,7 +121,7 @@
                     <button class="btn icon--large">
                         <i class="far fa-smile"></i>
                     </button>
-                    <input class="bottom-bar__type-input" type="text" placeholder="Scrivi un messaggio" v-model="typedMsg" @keyup.enter="assignInputValue()">
+                    <textarea class="bottom-bar__type-input" v-model="typedMsg" placeholder="Scrivi un messaggio" @keyup.enter="assignInputValue()"></textarea>
                     <button class="btn icon--large">
                         <i class="fas fa-microphone"></i>
                     </button>
