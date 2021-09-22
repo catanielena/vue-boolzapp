@@ -121,7 +121,7 @@
                     <button class="btn icon--large">
                         <i class="far fa-smile"></i>
                     </button>
-                    <input class="bottom-bar__type-input" type="text" placeholder="Scrivi un messaggio">
+                    <input class="bottom-bar__type-input" type="text" placeholder="Scrivi un messaggio" v-model="typedMsg" @keyup.enter="assignInputValue()">
                     <button class="btn icon--large">
                         <i class="fas fa-microphone"></i>
                     </button>

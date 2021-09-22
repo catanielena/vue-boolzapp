@@ -83,7 +83,8 @@ const app = new Vue ({
                 ],
             },
         ],
-        activeChat :[]
+        activeChat :[],
+        typedMsg: "",
     },
     methods: {
         changeActiveChat: function(i) {
@@ -97,6 +98,34 @@ const app = new Vue ({
                     }
                 }
             });
+        },
+        currentDate: function() {
+            const d = new Date();
+            const date = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+            const time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+            return date +' '+ time;
+        },
+        assignInputValue: function() {
+            // input obj
+            let msg = {
+                date: this.currentDate(),
+                message: this.typedMsg,
+                status: 'sent'
+            };
+            // reset input
+            this.typedMsg= "";
+            // print input obj
+            this.activeChat[0].messages.push(msg);
+            setTimeout(() => {
+                // cpu message obj
+                let msgCpu = {
+                    date: this.currentDate(),
+                    message: 'ok',
+                    status: 'received'
+                };
+                // print cpu obj
+                this.activeChat[0].messages.push(msgCpu);
+            }, 1000);
         }
     },
     created: function() {
