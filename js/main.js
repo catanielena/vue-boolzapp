@@ -107,26 +107,29 @@ const app = new Vue ({
             return `${date} ${time}`;
         },
         assignInputValue: function() {
-            // input obj
-            let msg = {
-                date: this.currentDate(),
-                message: this.typedMsg,
-                status: 'sent'
-            };
-            // reset input
-            this.typedMsg= "";
-            // print input obj
-            this.activeChat[0].messages.push(msg);
-            setTimeout(() => {
-                // cpu message obj
-                let msgCpu = {
+            const lines = this.typedMsg.split("\n").filter(e => e!=="" && e!==" ");
+            if(lines.length !== 0) {
+                let msg = {
                     date: this.currentDate(),
-                    message: 'Ok',
-                    status: 'received'
+                    message: this.typedMsg,
+                    status: 'sent'
                 };
-                // print cpu obj
-                this.activeChat[0].messages.push(msgCpu);
-            }, 1000);
+                // input obj
+                // reset input
+                this.typedMsg= "";
+                // print input obj
+                this.activeChat[0].messages.push(msg);
+                setTimeout(() => {
+                    // cpu message obj
+                    let msgCpu = {
+                        date: this.currentDate(),
+                        message: 'Ok',
+                        status: 'received'
+                    };
+                    // print cpu obj
+                    this.activeChat[0].messages.push(msgCpu);
+                }, 1000);
+            }
         },
         searchIn : function() {
             return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput))
