@@ -84,7 +84,7 @@ const app = new Vue ({
             },
         ],
         activeChat :[],
-        typedMsg: "",
+        typedMsg: ""
     },
     methods: {
         changeActiveChat: function(i) {
@@ -101,9 +101,9 @@ const app = new Vue ({
         },
         currentDate: function() {
             const d = new Date();
-            const date = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
-            const time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
-            return date +' '+ time;
+            const date = `${d.getDate().toString().padStart(2, "0")}/${(d.getMonth()+1).toString().padStart(2, "0")}/${d.getFullYear()}`;
+            const time = `${d.getHours()}:${d.getMinutes().toString().padStart(2, "0")}:${d.getSeconds().toString().padStart(2, "0")}`;
+            return `${date} ${time}`;
         },
         assignInputValue: function() {
             // input obj
@@ -120,15 +120,26 @@ const app = new Vue ({
                 // cpu message obj
                 let msgCpu = {
                     date: this.currentDate(),
-                    message: 'ok',
+                    message: 'Ok',
                     status: 'received'
                 };
                 // print cpu obj
                 this.activeChat[0].messages.push(msgCpu);
             }, 1000);
+        },
+        getValue: function(value) {
+            return value
         }
     },
     created: function() {
         this.activeChat.push(this.contacts[0])
-    }
+    },
+    // mounted: {
+    //     calcHeight: function(value) {
+    //         let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+    //         // min-height + lines x line-height + padding + border
+    //         let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+    //         return newHeight;
+    //     }
+    // }
 });
