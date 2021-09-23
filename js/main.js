@@ -27,7 +27,7 @@ const app = new Vue ({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '20/03/2020 16:30:00',
                     message: 'Ciao come stai?',
@@ -48,7 +48,7 @@ const app = new Vue ({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
                     message: 'La Marianna va in campagna',
@@ -69,7 +69,7 @@ const app = new Vue ({
             {
                 name: 'Luisa',
                 avatar: '_4',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
                     message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -83,22 +83,14 @@ const app = new Vue ({
                 ],
             },
         ],
+        activeChatIndex: 0,
         activeChat :[],
         typedMsg: "",
         searchInput:"",
     },
     methods: {
         changeActiveChat: function(i) {
-            this.activeChat= {};
-            this.contacts.forEach((e) => e.visible = false);
-            this.activeChat = this.contacts.filter((e, index) => {
-                if(index==i) {
-                    e.visible = true;
-                    return {
-                        ...e
-                    }
-                }
-            });
+            this.activeChatIndex = i;
         },
         currentDate: function() {
             const d = new Date();
@@ -109,16 +101,16 @@ const app = new Vue ({
         assignInputValue: function() {
             const lines = this.typedMsg.split("\n").filter(e => e!=="" && e!==" ");
             if(lines.length !== 0) {
+                // input obj
                 let msg = {
                     date: this.currentDate(),
                     message: this.typedMsg,
                     status: 'sent'
                 };
-                // input obj
                 // reset input
                 this.typedMsg= "";
                 // print input obj
-                this.activeChat[0].messages.push(msg);
+                this.contacts[this.activeChatIndex].messages.push(msg);
                 setTimeout(() => {
                     // cpu message obj
                     let msgCpu = {
@@ -127,7 +119,7 @@ const app = new Vue ({
                         status: 'received'
                     };
                     // print cpu obj
-                    this.activeChat[0].messages.push(msgCpu);
+                    this.contacts[this.activeChatIndex].messages.push(msgCpu);
                 }, 1000);
             }
         },
