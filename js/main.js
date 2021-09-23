@@ -139,6 +139,8 @@ const app = new Vue ({
         },
         deleteMsg: function(msgIndex) {
             this.contacts[this.activeChatIndex].messages.splice(msgIndex,1);
+            this.contacts[this.activeChatIndex].messages[msgIndex].menu = 'hide';
+            this.forceRerender()
         },
         voiceNote: function() {
             let recognition = new SpeechRecognition();
