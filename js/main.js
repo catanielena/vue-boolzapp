@@ -108,7 +108,8 @@ const app = new Vue ({
                 let msg = {
                     date: this.currentDate(),
                     message: this.typedMsg,
-                    status: 'sent'
+                    status: 'sent',
+                    menu: 'hide'
                 };
                 // reset input
                 this.typedMsg= "";
@@ -119,7 +120,8 @@ const app = new Vue ({
                     let msgCpu = {
                         date: this.currentDate(),
                         message: 'Ok',
-                        status: 'received'
+                        status: 'received',
+                        menu: 'hide'
                     };
                     // print cpu obj
                     this.contacts[this.activeChatIndex].messages.push(msgCpu);
