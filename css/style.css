@@ -202,12 +202,15 @@ main button {
 }
 
 .message {
+    position: relative;
+    min-width: 9.375rem;
     max-width: 15.625rem;
     padding: .8rem .3rem .3rem .8rem;
     margin: .3rem;
     border-radius: .625rem;
     font-size: .8rem;
     word-wrap: break-word;
+    cursor: pointer;
 }
 
 .sent {
@@ -248,4 +251,28 @@ main button {
     background-color: #fff;
 }
 
+.message__pop-up {
+    z-index: 1;
+    width: 9.375rem;
+    position: absolute;
+    right: 0;
+    border-radius: .3125rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.3); 
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.3);
+}
 
+.message__pop-up__btn {
+    width: 100%;
+    font-size: .8rem;
+    color: #000;
+    padding: .4rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}

@@ -10,17 +10,19 @@ const app = new Vue ({
                     {
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
+                        
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
+
                     }
                 ],
             },
@@ -84,9 +86,10 @@ const app = new Vue ({
             },
         ],
         activeChatIndex: 0,
-        activeChat :[],
+        contactsClickIndex: 0,
         typedMsg: "",
         searchInput:"",
+        componentKey: 0
     },
     methods: {
         changeActiveChat: function(i) {
@@ -125,9 +128,21 @@ const app = new Vue ({
         },
         searchIn : function() {
             return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput))
+        },
+        forceRerender() {
+            this.componentKey += 1;  
+        },
+        prova: function(i) {
+            this.contacts[this.activeChatIndex].messages[i].menu == 'hide' ? this.contacts[this.activeChatIndex].messages[i].menu = 'show' : this.contacts[this.activeChatIndex].messages[i].menu = 'hide'
+        },
+        deleteMsg: function(msgIndex) {
+            this.contacts[this.activeChatIndex].messages.splice(msgIndex,1);
+            this.contacts[this.activeChatIndex].messages[msgIndex].menu = false;
         }
     },
-    created: function() {
-        this.activeChat.push(this.contacts[0])
-    }
+    created() {
+            this.contacts.forEach(e => {
+                e.messages.forEach((el) => el.menu= 'hide' )      
+            });
+        }
 });

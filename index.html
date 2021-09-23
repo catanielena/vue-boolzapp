@@ -105,13 +105,25 @@
                 </div>
                 <!-- /chat__top-bar -->
                 <!-- chat__chat-window -->
-                <div class="chat__chat-window">
-                    <div class="message" :class="message.status" v-for="message in contacts[activeChatIndex].messages">
+                <div class="chat__chat-window" :key="componentKey">
+                    <div class="message" 
+                    :class="message.status" 
+                    v-for="(message, msgIndex) in contacts[activeChatIndex].messages"
+                    @click="message.menu == 'hide' ? message.menu = 'show' : message.menu = 'hide'; forceRerender()"
+                    :key="msgIndex">
                         <div class="message__text">
                             {{message.message}}
                         </div>
                         <div class="message__date">
                             {{message.date}}
+                        </div>
+                        <div class="message__pop-up" :class="message.menu">
+                            <button class="btn message__pop-up__btn">
+                                Info messaggio
+                            </button>
+                            <button class="btn message__pop-up__btn" @click="deleteMsg(msgIndex)">
+                                cancella messaggio
+                            </button>
                         </div>
                     </div>
                 </div>
