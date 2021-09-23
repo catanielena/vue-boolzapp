@@ -89,7 +89,7 @@ const app = new Vue ({
         contactsClickIndex: 0,
         typedMsg: "",
         searchInput:"",
-        componentKey: 0
+        componentKey: 0,
     },
     methods: {
         changeActiveChat: function(i) {
@@ -137,9 +137,12 @@ const app = new Vue ({
         },
         deleteMsg: function(msgIndex) {
             this.contacts[this.activeChatIndex].messages.splice(msgIndex,1);
-            this.contacts[this.activeChatIndex].messages[msgIndex].menu = false;
+        },
+        voiceNote: function() {
+            let recognition = new SpeechRecognition();
+            recognition.start();
         }
-    },
+    }, 
     created() {
             this.contacts.forEach(e => {
                 e.messages.forEach((el) => el.menu= 'hide' )      

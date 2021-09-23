@@ -121,7 +121,7 @@
                             <button class="btn message__pop-up__btn">
                                 Info messaggio
                             </button>
-                            <button class="btn message__pop-up__btn" @click="deleteMsg(msgIndex)">
+                            <button class="btn message__pop-up__btn" @click="deleteMsg(msgIndex); message.menu = 'hide'">
                                 cancella messaggio
                             </button>
                         </div>
@@ -134,7 +134,7 @@
                         <i class="far fa-smile"></i>
                     </button>
                     <textarea class="bottom-bar__type-input" v-model="typedMsg" placeholder="Scrivi un messaggio" @keyup.enter="assignInputValue()"></textarea>
-                    <button class="btn icon--large">
+                    <button class="btn icon--large" @click="voiceNote()">
                         <i class="fas fa-microphone"></i>
                     </button>
                 </div>
