@@ -86,15 +86,11 @@ const app = new Vue ({
             },
         ],
         activeChatIndex: 0,
-        contactsClickIndex: 0,
         typedMsg: "",
         searchInput:"",
         componentKey: 0,
     },
     methods: {
-        changeActiveChat: function(i) {
-            this.activeChatIndex = i;
-        },
         currentDate: function() {
             const d = new Date();
             const date = `${d.getDate().toString().padStart(2, "0")}/${(d.getMonth()+1).toString().padStart(2, "0")}/${d.getFullYear()}`;
@@ -104,42 +100,35 @@ const app = new Vue ({
         assignInputValue: function() {
             const lines = this.typedMsg.split("\n").filter(e => e!=="" && e!==" ");
             if(lines.length !== 0) {
-                // input obj
-                let msg = {
+                // print input obj
+                this.contacts[this.activeChatIndex].messages.push({
                     date: this.currentDate(),
                     message: this.typedMsg,
                     status: 'sent',
                     menu: 'hide'
-                };
+                });
                 // reset input
                 this.typedMsg= "";
-                // print input obj
-                this.contacts[this.activeChatIndex].messages.push(msg);
                 setTimeout(() => {
-                    // cpu message obj
-                    let msgCpu = {
+                    // print cpu obj
+                    this.contacts[this.activeChatIndex].messages.push({
                         date: this.currentDate(),
                         message: 'Ok',
                         status: 'received',
                         menu: 'hide'
-                    };
-                    // print cpu obj
-                    this.contacts[this.activeChatIndex].messages.push(msgCpu);
-                }, 1000);
+                    })}, 1000);
             }
         },
         searchIn : function() {
-            return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput))
+            return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput.toLowerCase()))
         },
         forceRerender() {
             this.componentKey += 1;  
         },
-        prova: function(i) {
-            this.contacts[this.activeChatIndex].messages[i].menu == 'hide' ? this.contacts[this.activeChatIndex].messages[i].menu = 'show' : this.contacts[this.activeChatIndex].messages[i].menu = 'hide'
-        },
         deleteMsg: function(msgIndex) {
-            this.contacts[this.activeChatIndex].messages.splice(msgIndex,1);
-            this.contacts[this.activeChatIndex].messages[msgIndex].menu = 'hide';
+            var n = this.contacts[this.activeChatIndex].messages;
+            n.splice(msgIndex,1);
+            n[msgIndex].menu = 'hide';
             this.forceRerender()
         },
         voiceNote: function() {
