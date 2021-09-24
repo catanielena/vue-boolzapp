@@ -88,7 +88,7 @@ const app = new Vue ({
         activeChatIndex: 0,
         typedMsg: "",
         searchInput:"",
-        componentKey: 0,
+        componentKey: 0
     },
     methods: {
         currentDate: function() {
@@ -124,6 +124,7 @@ const app = new Vue ({
         },
         forceRerender() {
             this.componentKey += 1;  
+            OverlayScrollbars(document.getElementById(''), { /* your options */ })
         },
         deleteMsg: function(msgIndex) {
             var n = this.contacts[this.activeChatIndex].messages;
@@ -140,5 +141,6 @@ const app = new Vue ({
             this.contacts.forEach(e => {
                 e.messages.forEach((el) => el.menu= 'hide' )      
             });
-        }
+        },
+        
 });
