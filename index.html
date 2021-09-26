@@ -111,12 +111,26 @@
                     v-for="(message, msgIndex) in contacts[activeChatIndex].messages"
                     @click="message.menu == 'hide' ? message.menu = 'show' : message.menu = 'hide'; forceRerender()"
                     :key="msgIndex">
-                        <div class="message__text">
-                            {{message.message}}
-                        </div>
-                        <div class="message__date">
+                    <div class="message__text" v-if="message.message!==null">
+                        {{message.message}}
+                    </div>
+                    <div class="audio-container" v-else>
+                        <button class="circle--container">
+                            <img src="img/avatar_io.jpg" alt="">
+                        </button>
+                        <audio :id="`audio-${msgIndex}`" controls="controls">
+                            <source :src="message.src" type="video/webm">
+                        </audio>
+                    </div>
+                    <div class="message__dtl">
+
+                        <div class="dtl__date">
                             {{message.date}}
                         </div>
+                        <div class="dtl__check text--sm">
+                            <span>&#10004;&#10004;</span>
+                        </div>
+                    </div>
                         <div class="message__pop-up" :class="message.menu">
                             <button class="btn message__pop-up__btn">
                                 Info messaggio
@@ -130,13 +144,17 @@
                 <!-- /chat__chat-window -->
                 <!-- chat__bottom-bar -->
                 <div class="chat__bottom-bar align--center">
-                    <button class="btn icon--large">
+                    <button class="btn icon--large" @click="emojiclick = !emojiclick">
                         <i class="far fa-smile"></i>
                     </button>
+                    <div class="emojis" :style="emojiclick==false? {'display': 'none'} : {'display': 'inline-block'}">
+                        <button class="emoticon" v-for="(icon, index) in emojiList" :key="index" @click="typedMsg+=icon.icon">{{icon.icon}}</button>
+                    </div>
                     <textarea class="bottom-bar__type-input" v-model="typedMsg" placeholder="Scrivi un messaggio" @keyup.enter="assignInputValue()"></textarea>
-                    <button class="btn icon--large" @click="voiceNote()">
+                    <button class="btn icon--large" @click="voiceNote(); click = !click">
                         <i class="fas fa-microphone"></i>
                     </button>
+                
                 </div>
                 <!-- /chat__bottom-bar -->
             </main>

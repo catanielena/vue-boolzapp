@@ -1,4 +1,4 @@
-const app = new Vue ({
+const app = new Vue({
     el: '#root',
     data: {
         contacts: [
@@ -16,7 +16,7 @@ const app = new Vue ({
                         date: '10/01/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
-                        
+
                     },
                     {
                         date: '10/01/2020 16:15:22',
@@ -35,16 +35,16 @@ const app = new Vue ({
                     message: 'Ciao come stai?',
                     status: 'sent'
                 },
-                    {
-                        date: '20/03/2020 16:30:55',
-                        message: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
-                    },
-                    {
-                        date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
-                    }
+                {
+                    date: '20/03/2020 16:30:55',
+                    message: 'Bene grazie! Stasera ci vediamo?',
+                    status: 'received'
+                },
+                {
+                    date: '20/03/2020 16:35:00',
+                    message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                    status: 'received'
+                }
                 ],
             },
             {
@@ -56,16 +56,16 @@ const app = new Vue ({
                     message: 'La Marianna va in campagna',
                     status: 'received'
                 },
-                    {
-                        date: '28/03/2020 10:20:10',
-                        message: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '28/03/2020 16:15:22',
-                        message: 'Ah scusa!',
-                        status: 'received'
-                    }
+                {
+                    date: '28/03/2020 10:20:10',
+                    message: 'Sicuro di non aver sbagliato chat?',
+                    status: 'sent'
+                },
+                {
+                    date: '28/03/2020 16:15:22',
+                    message: 'Ah scusa!',
+                    status: 'received'
+                }
                 ],
             },
             {
@@ -77,29 +77,36 @@ const app = new Vue ({
                     message: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent'
                 },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    }
+                {
+                    date: '10/01/2020 15:50:00',
+                    message: 'Si, ma preferirei andare al cinema',
+                    status: 'received'
+                }
                 ],
             },
         ],
+        emoji: ["😀", "😃", "😄","😁","😆", "😅", "🤣","😂","🙂","🙃","😉","😊","😇","🥰","😍","🤩","😘","😗","😚","😙","😋","😛","😜","🤪","😝","🤑","🤗","🤭","🤫","🤔","🤐","🤨","😐","😑","😶","😏","😒","🙄","😬","🤥","😌","😔","😪","🤤","😴","😷","🤒","🤕","🤢","🤮","🤧","🥵","🥶","🥴","😵","🤯","🤠","🥳","😎","🤓","🧐","😕","😟","🙁","☹️","😮","😯","😲","😳","🥺","😦","😧","😨","😰","😥","😢","😭","😱","😖","😣","😞","😓","😩","😫","🥱","😤","😡","😠","🤬","😈","👿","💀","☠️","💩","🤡","👹","👺","👻","👽","👾","🤖","😺","😸","😹","😻","😼","😽","🙀","😿","😾","🙈","🙉","🙊","💋","💌","💘","💝","💖","💗","💓","💞","💕","💟","❣️","💔","❤️","🧡","💛","💚","💙","💜","🤎","🖤","🤍","💯","💢","💥","💫","💦","💨","🕳️","💣","💬","👁️‍🗨️","🗨️","🗯️","💭","💤"	,"👋","🤚","🖐️","✋","🖖","👌","🤏","✌️","🤞","🤟","🤘","🤙","👈","👉","👆","🖕","👇","☝️","👍","👎","✊","👊","🤛","🤜","👏","🙌","👐","🤲","🤝","🙏","✍️","💅","🤳","💪","🦾","🦿","🦵","🦶","👂","🦻","👃","🧠","🦷","🦴","👀","👁️","👅","👄","👶","🧒","👦","👧","🧑","👱","👨","👨‍🦰","👨‍🦱","👨‍🦳","👨‍🦲","👩","👩‍🦰","👱‍♂️","🧓","👴","👵","🙍","🙍‍♂️","🙍‍♀️","🙎","🙎‍♂️","🙎‍♀️","🙅","🙅‍♂️","🙅‍♀️","🙆","🙆‍♂️","🙆‍♀️","💁","💁‍♂️","💁‍♀️","🙋","🙋‍♂️","🙋‍♀️","🧏","🧏‍♂️","🧏‍♀️","🙇","🙇‍♂️","🙇‍♀️","🤦","🤦‍♂️","🤦‍♀️","🤷","🤷‍♂️","👨‍⚕️","👩‍⚕️","👨‍🎓","👩‍🎓","👨‍🏫","👩‍🏫","👨‍⚖️","👩‍⚖️","👨‍🌾","👩‍🌾","👨‍🍳","👩‍🍳","👨‍🔧","👩‍🔧","👨‍🏭","👩‍🏭","👨","👩‍💼","👨‍🔬","👩‍🔬","👨‍💻","👩‍💻","👨‍🎤","👩‍🎤","👨‍🎨","👩‍🎨","👨‍✈️","👩‍✈️","👨‍🚀","👩‍🚀","👨‍🚒","👩‍🚒","👮","👮‍♀️","🕵️","🕵️‍♀️","💂‍♂️","💂‍♀️","👷‍♂️","👷‍♀️","🤴","👸","👳‍♂️","👳‍♀️","👲","🧕","🤵","👰","🤰","🤱","👼","🎅","🤶","🦸‍♂️","🦸‍♀️","🦹‍♂️","🦹‍♀️","🧙‍♂️","🧙‍♀️","🧚‍♂️","🧚‍♀️","🧛‍♂️","🧛‍♀️","🧜‍♂️","🧜‍♀️","🧝‍♂️","🧝‍♀️","🧞‍♂️","🧞‍♀️","🧟‍♂️","🧟‍♀️","💆‍♂️","💆‍♀️","💇‍♂️","💇‍♀️","🚶‍♂️","🚶‍♀️","🧍‍♂️","🧍‍♀️","🧎‍♂️","🧎‍♀️","👨‍🦯","👩‍🦯","👨‍🦼","👩‍🦼","👨‍🦽","👩‍🦽","🏃‍♂️","🏃‍♀️","💃","🕺","🕴️","👯‍♂️","👯‍♀️","🧖‍♂️","🧖‍♀️","🧗‍♂️","🧗‍♀️","🤺","🏇","⛷️","🏂","🏌️‍♂️","🏌️‍♀️","🏄‍♂️","🏄‍♀️","🚣‍♂️","🚣‍♀️","🏊‍♂️","🏊‍♀️","⛹️‍♂️","⛹️‍♀️","🏋️‍♂️","🏋️‍♀️","🚴‍♂️","🚴‍♀️","🚵‍♂️","🚵‍♀️","🤸‍♂️","🤸‍♀️","🤼‍♂️","🤼‍♀️","🤽‍♂️","🤽‍♀️","🤾‍♂️","🤾‍♀️","🤹‍♂️","🤹‍♀️","🧘‍♂️","🧘‍♀️","🛀","🛌","🧑‍🤝‍🧑","👭","👫","👬","💏","👩‍❤️‍💋‍👨","👨‍❤️‍💋‍👨","👩‍❤️‍💋‍👩","💑","👩‍❤️‍👨","👨‍❤️‍👨","👩‍❤️‍👩","👪","👨‍👩‍👦","👨‍👩‍👧","👨‍👩‍👧‍👦","👨‍👩‍👦‍👦","👨‍👨‍👦","👨‍👨‍👧‍👦","👨‍👨‍👧‍👧","👩‍👩‍👦","👩‍👩‍👧","👩‍👩‍👧‍👦","👩‍👩‍👧‍👧","👨‍👦","👨‍👦‍👦","👨‍👧","👨‍👧‍👦","👨‍👧‍👧","👩‍👦","👩‍👦‍👦","👩‍👧","👩‍👧‍👦","👩‍👧‍👧","🗣️","👤","👥","👣"],
+        emojiList: [],
         activeChatIndex: 0,
         typedMsg: "",
-        searchInput:"",
-        componentKey: 0
+        searchInput: "",
+        componentKey: 0,
+        audioIN: { audio: true },
+        voiceNotes: [],
+        recorder: 0,
+        click: false,
+        emojiclick: false
     },
     methods: {
-        currentDate: function() {
+        currentDate: function () {
             const d = new Date();
-            const date = `${d.getDate().toString().padStart(2, "0")}/${(d.getMonth()+1).toString().padStart(2, "0")}/${d.getFullYear()}`;
+            const date = `${d.getDate().toString().padStart(2, "0")}/${(d.getMonth() + 1).toString().padStart(2, "0")}/${d.getFullYear()}`;
             const time = `${d.getHours()}:${d.getMinutes().toString().padStart(2, "0")}:${d.getSeconds().toString().padStart(2, "0")}`;
             return `${date} ${time}`;
         },
-        assignInputValue: function() {
-            const lines = this.typedMsg.split("\n").filter(e => e!=="" && e!==" ");
-            if(lines.length !== 0) {
+        assignInputValue: function () {
+            const lines = this.typedMsg.split("\n").filter(e => e !== "" && e !== " ");
+            if (lines.length !== 0) {
                 // print input obj
                 this.contacts[this.activeChatIndex].messages.push({
                     date: this.currentDate(),
@@ -108,7 +115,7 @@ const app = new Vue ({
                     menu: 'hide'
                 });
                 // reset input
-                this.typedMsg= "";
+                this.typedMsg = "";
                 setTimeout(() => {
                     // print cpu obj
                     this.contacts[this.activeChatIndex].messages.push({
@@ -116,31 +123,57 @@ const app = new Vue ({
                         message: 'Ok',
                         status: 'received',
                         menu: 'hide'
-                    })}, 1000);
+                    })
+                }, 1000);
             }
         },
-        searchIn : function() {
+        searchIn: function () {
             return this.contacts.filter(e => e.name.toLowerCase().includes(this.searchInput.toLowerCase()))
         },
         forceRerender() {
-            this.componentKey += 1;  
+            this.componentKey += 1;
             OverlayScrollbars(document.getElementById(''), { /* your options */ })
         },
-        deleteMsg: function(msgIndex) {
+        deleteMsg: function (msgIndex) {
             var n = this.contacts[this.activeChatIndex].messages;
-            n.splice(msgIndex,1);
+            n.splice(msgIndex, 1);
             n[msgIndex].menu = 'hide';
             this.forceRerender()
         },
-        voiceNote: function() {
-            let recognition = new SpeechRecognition();
-            recognition.start();
+        voiceNote: function () {
+            if (this.click == false) {
+                let device = navigator.mediaDevices.getUserMedia(this.audioIN);
+                device.then(stream => {
+                    this.recorder = new MediaRecorder(stream);
+                    this.recorder.ondataavailable = e => {
+                        this.voiceNotes.push(e.data);
+                        if (this.recorder.state == 'inactive') {
+                            var blob = new Blob(this.voiceNotes, { type: 'audio/webm' });
+                            this.contacts[this.activeChatIndex].messages.push({
+                                date: this.currentDate(),
+                                message: null,
+                                status: 'sent',
+                                menu: 'hide',
+                                src: `${URL.createObjectURL(blob)}`
+                            });
+                        }
+                    }
+                    console.log(this.voiceNotes)
+                    this.recorder.start();
+                })
+            } else {
+                this.recorder.stop();
+            }
         }
-    }, 
+    },
     created() {
-            this.contacts.forEach(e => {
-                e.messages.forEach((el) => el.menu= 'hide' )      
-            });
-        },
-        
+        this.contacts.forEach(e => {
+            e.messages.forEach((el) => el.menu = 'hide')
+        });
+        this.emoji.forEach((e) => this.emojiList.push(
+            {icon: e}
+        ));
+        console.log(this.emojiList)
+    },
+
 });

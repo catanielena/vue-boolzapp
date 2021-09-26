@@ -1,4 +1,4 @@
-contacts: [
+wcontacts: [
 	{
 		name: 'Michele',
 		avatar: '_1',
